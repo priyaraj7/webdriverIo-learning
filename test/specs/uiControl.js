@@ -1,3 +1,6 @@
+// const expectChai = require("chai").expect;
+import { expect as expectChai } from "chai";
+
 describe("UI Controls Test suite", async () => {
   it("UI Controls", async () => {
     await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
@@ -22,6 +25,10 @@ describe("UI Controls Test suite", async () => {
     await dropdown.selectByAttribute("value", "teach");
     await dropdown.selectByVisibleText("Consultant");
     await dropdown.selectByIndex(0);
+    await browser.pause(3000);
     console.log(await dropdown.getValue());
+
+    // Chai assertion
+    expectChai(await dropdown.getValue()).to.equal("stud");
   });
 });
