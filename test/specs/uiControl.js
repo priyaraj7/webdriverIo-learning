@@ -2,7 +2,7 @@
 import { expect as expectChai } from "chai";
 
 describe("UI Controls Test suite", async () => {
-  it("UI Controls", async () => {
+  xit("UI Controls", async () => {
     await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
     await $("input[name='username']").setValue("rahulshettyacademy");
     await $("//input[@id='password']").setValue("learning");
@@ -30,5 +30,25 @@ describe("UI Controls Test suite", async () => {
 
     // Chai assertion
     expectChai(await dropdown.getValue()).to.equal("stud");
+  });
+  xit("Dynamic Dropdown Controls", async () => {
+    await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+    await $("#autocomplete").setValue("ind");
+    await browser.pause(3000);
+    let items = await $$("[class='ui-menu-item'] div");
+
+    for (let i = 0; i < (await items.length); i++) {
+      if ((await items[i].getText()) === "India") {
+        await items[i].click();
+      }
+    }
+  });
+
+  xit("Checkboxes Identification", async () => {
+    await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+    const element = await $$("input[type='checkbox']");
+    await element[1].click();
+    console.log(await element[1].isSelected());
+    console.log(await element[2].isSelected());
   });
 });
