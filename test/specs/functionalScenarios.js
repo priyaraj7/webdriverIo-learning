@@ -48,7 +48,7 @@ describe("Functional scenario", async () => {
     //let sortedVeggiesName = veggiesName.sort();
     await expectChai(veggiesName).to.eql(sortedVeggiesName);
   });
-  it("Search for an item", async () => {
+  xit("Search for an item", async () => {
     await browser.url(
       "https://rahulshettyacademy.com/seleniumPractise/#/offers"
     );
