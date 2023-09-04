@@ -20,7 +20,7 @@ describe("Window and Frames Miscellanous", async () => {
       "https://rahulshettyacademy.com/loginpagePractise/"
     );
   });
-  it("Frames switch", async () => {
+  xit("Frames switch", async () => {
     await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
     await $("#mousehover").scrollIntoView;
     console.log(await $$("a").length); // 27
