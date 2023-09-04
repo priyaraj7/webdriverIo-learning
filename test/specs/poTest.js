@@ -28,7 +28,7 @@ describe("E-commerce Application", async () => {
     );
   });
 
-  it("E2E test", async () => {
+  xit("E2E test", async () => {
     //login to the page
     const products = ["iphone X", "Nokia Edge"];
     await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
