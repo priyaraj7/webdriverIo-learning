@@ -6,8 +6,8 @@ import LoginPage from "../pageobjects/login.page.js";
 let credentials = JSON.parse(readFileSync("test/testData/LoginTest.json"));
 describe("E-commerce Application", async () => {
   credentials.forEach(({ username, password }) => {
-    it("Login fail page", async () => {
-      await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    it("Login fail page - Smoke", async () => {
+      await browser.url("/loginpagePractise/");
       console.log(await browser.getTitle());
       await expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
       await LoginPage.login(username, password);

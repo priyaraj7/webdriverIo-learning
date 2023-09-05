@@ -4,7 +4,7 @@ describe("E-Commerce Application", async () => {
   xit("E2E test", async () => {
     //login to the page
     const products = ["iphone X", "Nokia Edge"];
-    await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    await browser.url("/loginpagePractise/");
     await expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
     await $("input[name='username']").setValue("rahulshettyacademy");
     await $("//input[@id='password']").setValue("learning");
@@ -26,7 +26,7 @@ describe("E-Commerce Application", async () => {
     }
     await checkoutButton.click();
     // await browser.pause(3000);
-    //browser.switchWindow("https://rahulshettyacademy.com/angularpractice/shop");
+    //browser.switchWindow("/angularpractice/shop");
     const productPrices = await $$("//tr/td[4]/strong");
 
     // await productPrices.map(async (price) => {

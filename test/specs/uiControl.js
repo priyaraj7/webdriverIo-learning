@@ -3,7 +3,7 @@ import { expect as expectChai } from "chai";
 
 describe("UI Controls Test suite", async () => {
   xit("UI Controls", async () => {
-    await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    await browser.url("/loginpagePractise/");
     await $("input[name='username']").setValue("rahulshettyacademy");
     await $("//input[@id='password']").setValue("learning");
 
@@ -32,7 +32,7 @@ describe("UI Controls Test suite", async () => {
     expectChai(await dropdown.getValue()).to.equal("stud");
   });
   xit("Dynamic Dropdown Controls", async () => {
-    await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+    await browser.url("/AutomationPractice/");
     await $("#autocomplete").setValue("ind");
     await browser.pause(3000);
     let items = await $$("[class='ui-menu-item'] div");
@@ -45,7 +45,7 @@ describe("UI Controls Test suite", async () => {
   });
 
   xit("Checkboxes Identification", async () => {
-    await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+    await browser.url("/AutomationPractice/");
     const element = await $$("input[type='checkbox']");
     await element[1].click();
     console.log(await element[1].isSelected());

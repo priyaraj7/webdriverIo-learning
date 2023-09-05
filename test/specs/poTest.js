@@ -7,7 +7,7 @@ import reviewPage from "../pageobjects/reviewPage.js";
 describe("E-commerce Application", async () => {
   xit("Login fail page", async () => {
     // browser is a global object
-    await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    await browser.url("/loginpagePractise/");
     console.log(await browser.getTitle());
     await expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
     await LoginPage.login("rahulshettyacademy", "learning123");
@@ -31,7 +31,7 @@ describe("E-commerce Application", async () => {
   xit("E2E test", async () => {
     //login to the page
     const products = ["iphone X", "Nokia Edge"];
-    await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    await browser.url("/loginpagePractise/");
     await expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
     await LoginPage.login("rahulshettyacademy", "learning");
 

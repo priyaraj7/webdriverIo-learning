@@ -2,7 +2,7 @@ import { expect as expectChai } from "chai";
 
 describe("Functional scenario", async () => {
   xit("UI controls", async () => {
-    await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+    await browser.url("/AutomationPractice/");
     await $("#mousehover").scrollIntoView();
     await browser.pause(3000);
     await $("#mousehover").moveTo();
@@ -10,8 +10,8 @@ describe("Functional scenario", async () => {
     await $("=Top").click();
     await browser.pause(3000);
   });
-  xit("Alert msg handler", async () => {
-    await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+  it("Alert msg handler", async () => {
+    await browser.url("/AutomationPractice/");
     await $("#mousehover").scrollIntoView();
     await browser.pause(3000);
     await $("#mousehover").moveTo();
@@ -32,10 +32,8 @@ describe("Functional scenario", async () => {
     await browser.acceptAlert();
     await browser.pause(3000);
   });
-  xit("Web Tables validation", async () => {
-    await browser.url(
-      "https://rahulshettyacademy.com/seleniumPractise/#/offers"
-    );
+  it("Web Tables validation", async () => {
+    await browser.url("/seleniumPractise/#/offers");
 
     await $("tr th:nth-child(1)").click();
     //await browser.pause(8000);
@@ -48,10 +46,8 @@ describe("Functional scenario", async () => {
     //let sortedVeggiesName = veggiesName.sort();
     await expectChai(veggiesName).to.eql(sortedVeggiesName);
   });
-  xit("Search for an item", async () => {
-    await browser.url(
-      "https://rahulshettyacademy.com/seleniumPractise/#/offers"
-    );
+  it("Search for an item", async () => {
+    await browser.url("/seleniumPractise/#/offers");
     await $("#search-field").setValue("apple");
     const firstElementLocator = await $$(
       "tbody tr:nth-child(1) td:first-child"

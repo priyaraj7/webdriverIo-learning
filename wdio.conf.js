@@ -52,7 +52,7 @@ export const config = {
     {
       browserName: "chrome",
       "goog:chromeOptions": {
-        args: ["headless", "disable-gpu"],
+        //   args: ["headless", "disable-gpu"],
       },
     },
   ],
@@ -88,7 +88,7 @@ export const config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: "http://localhost",
+  baseUrl: "https://rahulshettyacademy.com",
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -126,7 +126,17 @@ export const config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec"],
+  //reporters: ["spec"],
+  reporters: [
+    [
+      "allure",
+      {
+        outputDir: "allure-results",
+        //disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
+      },
+    ],
+  ],
 
   //
   // Options to be passed to Mocha.
@@ -231,6 +241,15 @@ export const config = {
    */
   // afterTest: function(test, context, { error, result, duration, passed, retries }) {
   // },
+  afterTest: async function (
+    test,
+    context,
+    { error, result, duration, passed, retries }
+  ) {
+    if (error) {
+      await browser.takeScreenshot();
+    }
+  },
 
   /**
    * Hook that gets executed after the suite has ended

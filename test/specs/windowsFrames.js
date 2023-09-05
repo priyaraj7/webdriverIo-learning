@@ -1,6 +1,6 @@
 describe("Window and Frames Miscellanous", async () => {
   xit("Parent and Child windows switch", async () => {
-    await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    await browser.url("/loginpagePractise/");
 
     await $(".blinkingText").click();
 
@@ -16,12 +16,10 @@ describe("Window and Frames Miscellanous", async () => {
     await browser.newWindow("https://google.com"); // automation
     console.log(await browser.getTitle());
     //switchWindow -> open by automation
-    await browser.switchWindow(
-      "https://rahulshettyacademy.com/loginpagePractise/"
-    );
+    await browser.switchWindow("/loginpagePractise/");
   });
   xit("Frames switch", async () => {
-    await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+    await browser.url("/AutomationPractice/");
     await $("#mousehover").scrollIntoView;
     console.log(await $$("a").length); // 27
     browser.switchToFrame(await $("[id='courses-iframe']"));

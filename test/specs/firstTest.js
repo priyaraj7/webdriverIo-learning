@@ -1,7 +1,7 @@
 describe("E-commerce Application", async () => {
   xit("Login fail page", async () => {
     // browser is a global object
-    await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    await browser.url("/loginpagePractise/");
     console.log(await browser.getTitle());
 
     await expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
@@ -32,7 +32,7 @@ describe("E-commerce Application", async () => {
   });
 
   xit("Login success page", async () => {
-    await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    await browser.url("/loginpagePractise/");
     await $("input[name='username']").setValue("rahulshettyacademy");
     await $("//input[@id='password']").setValue("learning");
     await $("#signInBtn").click();
